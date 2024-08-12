@@ -13,10 +13,11 @@ class DiagnoseController extends Controller
         $this->middleware('auth');
     }
 
-    public function postNewHistory()
+    public function postNewHistory(Request $request)
     {
         $history = new History();
         $history->user_id = Auth::user()->id;
+        $history->patient_name = ucwords($request->pname);
         $history->save();
         return redirect('/diagnose/show');
     }
@@ -44,7 +45,6 @@ class DiagnoseController extends Controller
             $dataByDisease = $this->clusterRuleByDisease($disease, $ruleData); 
 
             $cfScoreByDisease = $this->calculateCf($dataByDisease);
-            // dd($cfScoreByDisease);
 
             $this->saveToHistory($cfScoreByDisease, $historyId, $disease);            
 

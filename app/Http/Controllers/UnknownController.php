@@ -35,7 +35,7 @@ class UnknownController extends Controller
         $symptomData = [];
         foreach($uniqueSymptom as $us){
             $symptomData[] = Symptom::where('id',$us)->first();
-        }
+        } 
         return view('pulpa.history.detail.detail',compact('data','isDashboard','disease','symptomData'));
     }
 

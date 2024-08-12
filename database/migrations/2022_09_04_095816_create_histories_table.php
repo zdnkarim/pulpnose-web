@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->string('patient_name')->nullable();
             $table->bigInteger('result')->unsigned()->index()->nullable();
             $table->string('cf')->nullable();
             $table->timestamps();

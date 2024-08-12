@@ -7,9 +7,9 @@
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Hasil Diagnosis</h4>
                 <h1 class="display-3 font-weight-bold text-white">
                     @if (!$sick || empty($data->diseases->name))
-                        Kemungkinan Anda Tidak Mengalami Penyakit Pulpitis
+                        Belum Bisa Ditentukan, Perlu Pemeriksaan Lebih Lanjut
                     @else
-                        Kemungkinan Anda Mengalami Penyakit {{ $data->diseases->name }} : {{ $data->cf * 100 }}%
+                        {{ $data->patient_name }} Kemungkinan Mengalami {{ $data->diseases->name }} : {{ $data->cf * 100 }}%
                     @endif
 
                 </h1>

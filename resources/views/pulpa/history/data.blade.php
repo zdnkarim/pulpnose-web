@@ -54,7 +54,8 @@
             <table class="table datatables" id="table1" style="width:100%">
                 <thead class="text-center">
                     <tr>
-                        <th>Name</th>
+                        <th>Doctor's Name</th>
+                        <th>Patient's Name</th>
                         <th>Result</th>
                         <th>Percent</th>
                         <th>Date</th>
@@ -69,6 +70,7 @@
                         @else
                             <tr>
                                 <td>{{ $item->users->name }}</td>
+                                <td>{{ $item->patient_name }}</td>
                                 @if ($item->result)
                                     <td>{{ $item->diseases->name }}</td>
                                 @else

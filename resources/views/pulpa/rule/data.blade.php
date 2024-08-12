@@ -1,5 +1,10 @@
 @extends('pulpa.components.sidebar')
 
+@section('css')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@endsection
+
 @section('subtitle')
     - Rule Data
 @endsection
@@ -93,7 +98,7 @@
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="defaultModalLabel">Add New Rule</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -130,11 +135,15 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn mb-2 btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn mb-2 btn-primary">Create</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    {{-- <script src="{{ asset('dboard/vendors/choices.js/choices.min.js') }}"></script> --}}
 @endsection

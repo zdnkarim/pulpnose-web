@@ -44,40 +44,9 @@
                 </a>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav font-weight-bold mx-auto py-0">
-                        @if (Auth::user())
-                            <a href="/history" class="nav-item nav-link">Riwayat</a>
-                            @if (Auth::user()->roles[0]->id == 1)
-                                <a href="/dashboard" class="nav-item nav-link">Dashboard</a>
-                            @endif
-                        @endif
+                        <a href="/history" class="nav-item nav-link">Riwayat</a>
+                        <a href="/dashboard" class="nav-item nav-link">Dashboard</a>
                     </div>
-                    @guest
-                        @if (Route::has('login'))
-                            <div class="nav-item">
-                                <a class="nav-link btn btn-primary px-4"
-                                    href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </div>
-                        @endif
-                    @else
-                        <div class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-primary px-4" href="#"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ str_word_count(Auth::user()->name, 1)[0] }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </div>
-                    @endguest
                 </div>
             </nav>
         </div>

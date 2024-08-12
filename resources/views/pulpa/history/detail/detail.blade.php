@@ -65,14 +65,20 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3 col-12">
-                                                    <label for="first-name-column">Nama</label>
+                                                    <label for="first-name-column">Nama Pemeriksa</label>
                                                 </div>
                                                 <div class="col-md-8 col-12">
                                                     : {{ $data[0]->histories->users->name }}
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-3 col-12">
+                                                    <label for="first-name-column">Nama Pasien</label>
+                                                </div>
+                                                <div class="col-md-8 col-12">
+                                                    : {{ $data[0]->histories->patient_name }}
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-3 col-12">
                                                     <label for="first-name-column">Penyakit</label>
@@ -86,8 +92,6 @@
 
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3 col-12">
                                                     <label for="first-name-column">Persentase</label>
@@ -96,8 +100,6 @@
                                                     : {{ $data[0]->histories->cf * 100 }}%
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3 col-12">
                                                     <label for="first-name-column">Definisi Penyakit</label>
@@ -110,8 +112,6 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-3 col-12">
                                                     <label for="first-name-column">Penanganan</label>
